@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>TravelTip</title>
+</head>
+<body>
+    <header class="flex">
+        <h1>Travel-Tip</h1>
+        <div class="icons-header flex">
+            <i class="fas fa-shoe-prints"></i>
+            <i class="fas fa-shoe-prints"></i>
+            <i class="fas fa-shoe-prints"></i>
+            <i class="fas fa-shoe-prints"></i>
+        </div>
+    </header>
+    <main class="main-container flex">
+        <div class="search-container flex">
+            <div  class="search-container-line flex">
+                <input id="search-line" class="insert-location" placeholder="Enter Location"></input>
+                <button id="btn-location" class="btn-choose-location">go</button>
+            </div>
+            <div class="flex">
+                <p class="location-word">Location: </p>
+                <div id="show-location" class="show-location"></div>
+            </div>
+        </div>
+        <div class="map-section flex">
+            <div class="map" id="map"></div>
+            <div class="aside-container flex">
+                <div class="btn-container flex">
+                    <button id="btn-my-location" class="btn btn-my-location">My Location</button>
+                    <button id="btn-copy-location" class="btn btn-copy-location">Copy Location</button>
+                </div>
+                <modal class="modal-weather flex">
+                    <div class="weather-header">Weather Today</div>
+                    <!-- <div class="desc flex"> -->
+                        <img class="weather-icon" id="weather-icon"></img>
+                    <!-- </div> -->
+                    <div class="modal-desc flex">
+                        <img class="flag" id="flag"></img>
+                        <div class="location" id="modal-location"></div>
+                        <div class="desc" id="desc"></div>
+                        <!-- <div class="rain" id="rain"></div> -->
+                    </div>
+                    <div class="modal-temp flex">
+                        <div class="temp weather-box" id="temp"></div>
+                        <div class="temp-range weather-box" id="temp-range"></div>
+                        <div class="wind weather-box" id="wind"></div>
+                        <div class="humidity weather-box" id="humidity"></div>
+                    </div>
+                </modal>
+            </div>
+        </div>
+    </main>
+
+    <!-- <button class="btn1">Click Me</button> -->
+    <script type="module" src="js/main.js"></script>
+    
+</body>
+</html>

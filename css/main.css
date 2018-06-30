@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: lightseagreen;
+    color: white;
+    font-family: cursive;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 20px 10px;
+}
+
+button {
+    cursor: pointer;
+    font-family: cursive;
+    background-color: rgb(4, 58, 37);
+    color: white;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+.flex {
+    display: flex;
+}
+
+.icons-header {
+    margin: auto 20px;
+}
+
+.search-container {
+    margin: 30px 20px;
+}
+
+.insert-location {
+    height: 30px;
+    width: 250px;
+}
+
+.main-container {
+    flex-direction: column;
+    width: 100%;
+}
+
+.btn-container {
+    justify-content: space-between;
+}
+
+.map-section {
+    justify-content: space-around;
+}
+
+.aside-container {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.map {
+    width: 50%;
+    height: 400px;
+    /* margin-right: 30px; */
+    margin-left: 20px;
+}
+
+.weather {
+    border: 1px solid black;
+    width: 250px;
+    height: 200px;
+}
+
+.location-word {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.show-location {
+    
+}
+
+.btn-choose-location {
+    margin-right: 40px;
+    width: 40px;
+}
+
+.btn {
+    width: 130px;
+    height: 30px;
+}
+
+.btn-my-location {
+    margin-right: 20px;
+}
+
+/* -----------modal-weather-------------- */
+
+.modal-weather {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    background-color: rgb(223, 216, 152);
+    color: black;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.location {
+    font-weight: bold;
+}
+.weather-header {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.temp-range {
+   
+}
+
+.weather-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    background-color: bisque;
+    border-radius: 5px;
+    margin: 0 10px;
+    min-height: 40px;
+}
+
+.temp {
+   
+}
+
+.modal-desc {
+    font-size: 1.2em;
+}
+
+.wind {
+    
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.flag {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+
+@media (max-width: 700px){
+
+    .search-container {
+        flex-direction: column;
+    }
+    .btn-container {
+        flex-direction: column;
+    }
+    .search-container-line {
+        margin-bottom: 20px;
+    }
+    .btn-my-location {
+        margin-bottom: 20px;
+    }
+    .map {
+        height: 350px;
+    }
+    .weather {
+        width: 220px;
+    }
+}
+
+@media (max-width: 600px){
+    header {
+        flex-direction: row;
+    }
+    h1 {
+        width: 50%;
+    }
+    .modal-weather {
+        margin-bottom: 10px;
+    }
+    .btn-container {
+        align-items: center;
+        flex-direction: row;
+    }
+    .search-container {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .search-container-line {
+        margin: 0;
+    }
+    .map-section {
+        flex-direction: column;
+    }
+    .aside-container {
+        width: 90%;
+        margin: auto;
+        flex-direction: column;
+    }
+    .btn-my-location {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .map {
+        width: 90%;
+        height: 300px;
+    }
+    .weather {
+        width: 100%;
+        height: 175px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .main-container {
+        justify-content: space-around;
+    }
+    .icons-header {
+        flex-wrap: nowrap;
+    }
+}
+
+
