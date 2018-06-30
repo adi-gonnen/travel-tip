@@ -5,12 +5,20 @@ import mapService from './services/map.service.js'
 
 const coordKey = 'AIzaSyDB9ee7mbpGYRZNjW_fYL08hlIrLKuQcrg';
 
-var [lat, lng] = [32.0749831, 34.9120554];      //default while loading
+// var [lat, lng] = [32.0749831, 34.9120554];      //default while loading
        
 locService.getLocs()
     .then(locs => console.log('locs', locs))
 
 window.onload = () => {
+    var urlParams = new URLSearchParams(window.location.search);
+    var lat = +urlParams.get('lat');
+    var lng = +urlParams.get('lng');
+    if (!lat) {
+        lat = 32.0749831;
+        lng = 34.9120554;
+    }
+
     mapService.initMap(lat,lng)
     getAddressByCoords(lat, lng);
     updateWeather(lat, lng);
@@ -118,6 +126,12 @@ function renderWeather(data, icon)  {
 }
 
 function copyAddress(lat, lng) {
-    console.log('lat: ', lat, 'lng: ', lng);
+    var address = ` https://adi-gonnen.github.io/travel-tip/?lat=${lat}&lng=${lng}`;
+    var el = document.createElement('textarea');
+    el.value = address;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
 }
 
