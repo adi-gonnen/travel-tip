@@ -88,11 +88,11 @@ function updateWeather(lat, lng) {
 }
 
 function renderWeather(data, icon)  {
-    var icon = `http://openweathermap.org/img/w/${icon}.png`;
+    var icon = `https://openweathermap.org/img/w/${icon}.png`;
     document.getElementById('weather-icon').src = icon;
     
     var countryCode = data.sys.country;
-    var code = `http://www.countryflags.io/${countryCode}/flat/64.png`;
+    var code = `https://www.countryflags.io/${countryCode}/flat/64.png`;
     document.getElementById('flag').src = code;
     // console.log('data: ', data);
     
