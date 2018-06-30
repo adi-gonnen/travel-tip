@@ -56,7 +56,7 @@ function _connectGoogleApi() {
 
 function loadWeather(lat, lon) {
     // console.log(lat, lon);
-    var prmWeather = fetch(`http://api.openweathermap.org/data/2.5/weather?units=metric&lat=${lat}&lon=${lon}&APPID=${weatherKey}`);
+    var prmWeather = fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${lat}&lon=${lon}&APPID=${weatherKey}`);
      return prmWeather.then(function(res){
         return res.json().then(function(data) {
             return {data:data, icon: data.weather[0].icon};
