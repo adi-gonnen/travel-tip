@@ -23,7 +23,7 @@ var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 function addMarker(loc) {
     var marker = new google.maps.Marker({
         position: loc,
-        icon: './img/Map-marker.png',
+        icon: './img/map-marker.png',
         map: map,
         title: 'Your Location'
     });
