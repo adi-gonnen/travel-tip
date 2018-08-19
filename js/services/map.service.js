@@ -19,21 +19,11 @@ function initMap(lat, lng, zoom = 15) {
 
 // console.log('iconBase', iconBase);
 var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-// var icons = {
-//   parking: {
-//     icon: iconBase + 'parking_lot_maps.png'
-//   },
-//   library: {
-//     icon: iconBase + 'library_maps.png'
-//   },
-//   info: {
-//     icon: iconBase + 'info-i_maps.png'
-//   }
-// };
+
 function addMarker(loc) {
     var marker = new google.maps.Marker({
         position: loc,
-        // icon: './img/flag-Map-marker.jpg',
+        icon: './img/Map-marker.png',
         map: map,
         title: 'Your Location'
     });
@@ -65,7 +55,6 @@ function loadWeather(lat, lon) {
     })
     // console.log('Sent the Request');
 }
-
 
 export default {
     initMap,

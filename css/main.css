@@ -33,6 +33,9 @@ button:hover {
     display: flex;
 }
 
+.column {
+    flex-direction: column;
+}
 .icons-header {
     margin: auto 20px;
 }
@@ -61,14 +64,12 @@ button:hover {
 
 .aside-container {
     flex-direction: column;
-    justify-content: space-between;
     margin: 0 30px;
 }
 
 .map {
     width: 50%;
     height: 400px;
-    /* margin-right: 30px; */
     margin-left: 20px;
 }
 
@@ -81,10 +82,6 @@ button:hover {
 .location-word {
     margin-right: 5px;
     font-weight: bold;
-}
-
-.show-location {
-    
 }
 
 .btn-choose-location {
@@ -112,6 +109,8 @@ button:hover {
     color: black;
     text-align: center;
     font-size: 0.8em;
+    margin-top: 50px;
+    padding-bottom: 20px;
 }
 
 .location {
@@ -121,9 +120,6 @@ button:hover {
     font-size: 1.5em;
     font-weight: bold;
 }
-.temp-range {
-   
-}
 
 .weather-box {
     display: flex;
@@ -132,19 +128,12 @@ button:hover {
     background-color: bisque;
     border-radius: 5px;
     margin: 0 10px;
+    padding: 4px;
     min-height: 40px;
-}
-
-.temp {
-   
 }
 
 .modal-desc {
     font-size: 1.2em;
-}
-
-.wind {
-    
 }
 
 .weather-icon {
@@ -184,9 +173,7 @@ button:hover {
 @media (max-width: 600px){
     header {
         flex-direction: row;
-    }
-    h1 {
-        width: 50%;
+        justify-content: center;
     }
     .modal-weather {
         margin-bottom: 10px;
@@ -196,15 +183,16 @@ button:hover {
         flex-direction: row;
     }
     .search-container {
-        width: 90%;
         margin: auto;
         margin-bottom: 10px;
+        flex-direction: column;
     }
     .search-container-line {
         margin: 0;
     }
     .map-section {
         flex-direction: column;
+        margin: auto;
     }
     .aside-container {
         width: 90%;
