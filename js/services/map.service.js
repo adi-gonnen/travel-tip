@@ -4,7 +4,6 @@ const weatherKey = '3a6dd853fd1a36c4169866cadc5719d1';
 const API_KEY = 'AIzaSyBH4Tt6Jy79ipq6OIt3u9sLxuX3dSyaLH0';
 
 function initMap(lat, lng, zoom = 15) {
-    // console.log('lat: ', lat, 'lng: ', lng);
     return _connectGoogleApi()
         .then(() => {
             console.log('google available');
@@ -13,11 +12,9 @@ function initMap(lat, lng, zoom = 15) {
                     center: { lat, lng },
                     zoom: zoom
                 })
-            console.log('Map!', map);
         })
 }
 
-// console.log('iconBase', iconBase);
 var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
 function addMarker(loc) {
@@ -45,15 +42,12 @@ function _connectGoogleApi() {
 }
 
 function loadWeather(lat, lon) {
-    // console.log(lat, lon);
     var prmWeather = fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${lat}&lon=${lon}&APPID=${weatherKey}`);
      return prmWeather.then(function(res){
         return res.json().then(function(data) {
             return {data:data, icon: data.weather[0].icon};
-            // console.log('temp2: ', data);
         }).catch (console.log('no weather to display'));
     })
-    // console.log('Sent the Request');
 }
 
 export default {

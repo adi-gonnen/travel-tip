@@ -5,14 +5,12 @@ function getLocs() {
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             resolve(locs);
-        }, 2000)
+        }, 1000)
     });
 
 }
 
 function getPosition() {
-    // console.log('Getting Pos');
-    
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
     })

@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    background-color: lightseagreen;
+    background-color: #254e4c;
     color: white;
     font-family: cursive;
 }
@@ -26,7 +26,7 @@ button {
 }
 
 button:hover {
-    opacity: 0.5;
+    background-color: black;
 }
 
 .flex {
@@ -105,7 +105,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     height: 200px;
-    background-color: rgb(223, 216, 152);
+    background-color: #dedbba;
     color: black;
     text-align: center;
     font-size: 0.8em;
@@ -145,6 +145,7 @@ button:hover {
     width: 15px;
     height: 15px;
     margin-right: 5px;
+    align-self: center;
 }
 
 

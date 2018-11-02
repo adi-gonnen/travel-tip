@@ -1,12 +1,8 @@
-console.log('Main!');
-
 import locService from './services/loc.service.js'
 import mapService from './services/map.service.js'
 
 const coordKey = 'AIzaSyDB9ee7mbpGYRZNjW_fYL08hlIrLKuQcrg';
 
-// var [lat, lng] = [32.0749831, 34.9120554];      //default while loading
-       
 locService.getLocs()
     .then(locs => console.log('locs', locs))
 
@@ -37,7 +33,6 @@ function getAddressByCoords(lat, lng) {
         var prmJson = res.json();
         prmJson.then(function(data) {
             var loc = data.results[4].formatted_address;
-            // console.log('new data: ', data, data.results[4].formatted_address);
             document.getElementById('show-location').innerHTML = loc;
             document.getElementById('modal-location').innerHTML = loc;      //modal weather
         })
@@ -48,7 +43,6 @@ function myLocation () {
     locService.getPosition()
     .then(data => {
         var coords = data.coords;
-        // console.log('data: ', data);
         var lat = coords.latitude;
         var lng = coords.longitude;
         getAddressByCoords(lat, lng);
@@ -63,22 +57,15 @@ function myLocation () {
 }
 
 function getMapByAddress(place) {
-    // console.log(place);
     var prm = fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${place}&key=${coordKey}&language=en`)
     prm.then(function (res) {
         var prmJson = res.json();
         prmJson.then(function(data) {
-            // console.log('new data: ', data.results[4].formatted_address);
-            
             var coords = data.results[0].geometry.location;
             var fullLoc = data.results[0].formatted_address;
             var lat = coords.lat;
             var lng = coords.lng; 
             mapService.initMap(lat, lng, 12).then(locate => mapService.addMarker({ lat: lat, lng: lng }))
-            // console.log('full data: ', data);
-            // console.log('coords: ', coords);
-            // console.log('address: ', fullLoc);
-            
             updateWeather(lat, lng)
             document.getElementById('show-location').innerHTML = fullLoc;
             document.getElementById('modal-location').innerHTML = fullLoc;
@@ -102,10 +89,9 @@ function renderWeather(data, icon)  {
     var countryCode = data.sys.country;
     var code = `https://www.countryflags.io/${countryCode}/flat/64.png`;
     document.getElementById('flag').src = code;
-    // console.log('data: ', data);
     
     var weather = data.main;
-    var [temp,tempMin, tempMax, humidity, wind, desc] = [weather.temp, weather.temp_min, weather.temp_max, weather.humidity, data.wind.speed, data.weather[0].description]
+    var [temp, tempMin, tempMax, humidity, wind, desc] = [weather.temp, weather.temp_min, weather.temp_max, weather.humidity, data.wind.speed, data.weather[0].description]
     
     var strHtmls = `:  ${desc}`;
     document.getElementById('desc').innerHTML = strHtmls;
